@@ -37,6 +37,26 @@
            console.log(firebase)
       var database= firebase.database();
       var assets=database.ref("assets");
+      ref.on("value",gotData,errData);
+		 var data1;
+		 var keys;
+		 var x5=[];
+		 var y5=[];
+		 var z5=[];
+		 function gotData(data){
+			 console.log(data.val());
+			 data1=data.val();
+			 keys=Object.keys(data1);
+			 for ( let i in keys ){
+				 x5.append(data1[keys].x);
+				 y5.append(data1[keys].y);
+				 z5.append(data1[keys].z);
+			 }
+			 
+		 }
+		 function errData(data){
+			 console.log(data);
+		 }
     </script>
   </head>
   <body onclick="update()">
@@ -68,13 +88,13 @@
       }
 
 function load_assets(){
-        for (i in assets){
+        for (i in x5){
           var geometry = new THREE.BoxGeometry( 0.1, 0.1, 0.1 );
           var material = new THREE.MeshBasicMaterial( {color: 0xffb29a} );
           var cube = new THREE.Mesh( geometry, material );
-          cube.position.x=i[0];
-          cube.position.z=i[2];
-          cube.position.y=i[1];
+          cube.position.x=x5[i];
+          cube.position.z=y5[i];
+          cube.position.y=z5[i];
           scene.add( cube );
         }
       }
