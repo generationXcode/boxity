@@ -14,16 +14,16 @@
          https://firebase.google.com/docs/web/setup#config-web-app -->
 
          <!-- The core Firebase JS SDK is aslways required and must be listed first -->
-         <!--<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
          <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>-->
+     <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
 
          <!-- TODO: Add SDKs for Firebase products that you want to use
               https://firebase.google.com/docs/web/setup#config-web-app -->
 
          <script>
            // Your web app's Firebase configuration
-          /* var firebaseConfig = {
+           var firebaseConfig = {
              apiKey: "AIzaSyA6o-OkIFoWbH8PIf3iD6vADcpAMnS7cQY",
              authDomain: "boxity-e066d.firebaseapp.com",
              databaseURL: "https://boxity-e066d.firebaseio.com",
@@ -36,7 +36,7 @@
            firebase.initializeApp(firebaseConfig);
            console.log(firebase)
       var database= firebase.database();
-      var posRef=database.ref("positions");*/
+      var assets=database.ref("assets");
     </script>
   </head>
   <body onclick="update()">
@@ -67,7 +67,17 @@
         scene.add( cube );
       }
 
-
+function load_assets(){
+        for (i in assets){
+          var geometry = new THREE.BoxGeometry( 0.1, 0.1, 0.1 );
+          var material = new THREE.MeshBasicMaterial( {color: 0xffb29a} );
+          var cube = new THREE.Mesh( geometry, material );
+          cube.position.x=i[0];
+          cube.position.z=i[2];
+          cube.position.y=i[1];
+          scene.add( cube );
+        }
+      }
 
       var velocity = new THREE.Vector3();
       var moveLeft=false;
@@ -175,7 +185,7 @@
   //console.log("log")
 }
 
-
+load_assets();
 var speed=0.005;
 var count=0;
 			var animate = function () {
