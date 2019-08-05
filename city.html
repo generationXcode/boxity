@@ -48,9 +48,9 @@
 			 data1=data.val();
 			 keys=Object.keys(data1);
 			 for ( let i in keys ){
-				 x5.append(data1[keys].x);
-				 y5.append(data1[keys].y);
-				 z5.append(data1[keys].z);
+				 x5.append(data1[keys][0]);
+				 y5.append(data1[keys][1]);
+				 z5.append(data1[keys][2]);
 			 }
 			 
 		 }
