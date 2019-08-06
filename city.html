@@ -189,10 +189,7 @@ async function load_assets(){
       renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
 
-      var loader = new THREE.GLTFLoader();
-				loader.load( 'building.glb',function(obj){
-          scene.add(obj.scene);
-        });
+
 
         
  function update() {
