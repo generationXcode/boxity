@@ -37,7 +37,7 @@
            console.log(firebase)
       var database= firebase.database();
       var assets=database.ref("assets");
-      ref.on("value",gotData,errData);
+      assets.on("value",gotData,errData);
 		 var data1;
 		 var keys;
 		 var x5=[];
