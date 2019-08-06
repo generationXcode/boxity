@@ -124,7 +124,7 @@ async function load_assets(){
 
       var renderer=new THREE.WebGLRenderer({ alpha: true })
       renderer.setClearColor( 0x00EEFF, 1 );
-      renderer.addEventListener
+      renderer.addEventListener("click", toggle);
       var controls = new THREE.PointerLockControls( camera );
 				var blocker = document.getElementById( 'blocker' );
 				var instructions = document.getElementById( 'instructions' );
