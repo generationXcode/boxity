@@ -77,7 +77,17 @@
 
 		<script>
 			// Our Javascript will go here.
+			var bin=1;
+			function toggle(){
+				if(bin==1){
+					bin=0;
+				}
+				else{
+					bin=1;
+				}
+			}
 function add(){
+	if(bin=1){
         var geometry = new THREE.BoxGeometry( 0.1, 0.1, 0.1 );
         var material = new THREE.MeshBasicMaterial( {color: 0xffb29a} );
         var cube = new THREE.Mesh( geometry, material );
@@ -87,6 +97,8 @@ function add(){
         scene.add( cube );
 	assets.push([cube.position.x,cube.position.y,cube.position.z]);
 	console.log("added");
+	}
+	else{}
       }
 
 async function load_assets(){
