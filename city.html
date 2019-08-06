@@ -85,11 +85,7 @@ function add(){
         cube.position.z=camera.position.z;
         cube.position.y=camera.position.y-0.1;
         scene.add( cube );
-	x5.push(cube.position.x);
-	
-	y5.push(cube.position.y);
-	
-	z5.push(cube.position.z);
+	assets.push([cube.position.x,cube.position.y,cube.position.z]);
       }
 
 async function load_assets(){
