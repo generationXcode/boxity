@@ -38,7 +38,7 @@
       var database= firebase.database();
       var assets=database.ref("assets");
       assets.on("value",gotData,errData);
-		 var data1;
+		 var data1={};
 		 var keys;
 		 var x5=[];
 		 var y5=[];
@@ -46,6 +46,7 @@
 		 function gotData(data){
 			 console.log(data.val());
 			 data1=data.val();
+			 console.log(data1);
 			 keys=Object.keys(data1);
 			 for ( let i in keys ){
 				 x5.push(data1[keys][0]);
