@@ -48,9 +48,9 @@
 			 data1=data.val();
 			 keys=Object.keys(data1);
 			 for ( let i in keys ){
-				 x5.append(data1[keys][0]);
-				 y5.append(data1[keys][1]);
-				 z5.append(data1[keys][2]);
+				 x5.push(data1[keys][0]);
+				 y5.push(data1[keys][1]);
+				 z5.push(data1[keys][2]);
 			 }
 			 
 		 }
@@ -82,7 +82,7 @@ async function add(){
         var cube = new THREE.Mesh( geometry, material );
         cube.position.x=camera.position.x;
         cube.position.z=camera.position.z;
-        cube.position.y=camera.position.y-0.01;
+        cube.position.y=camera.position.y-0.1;
         scene.add( cube );
       }
 
