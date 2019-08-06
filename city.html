@@ -86,6 +86,7 @@ function add(){
         cube.position.y=camera.position.y-0.1;
         scene.add( cube );
 	assets.push([cube.position.x,cube.position.y,cube.position.z]);
+	console.log("added");
       }
 
 async function load_assets(){
@@ -203,7 +204,7 @@ async function load_assets(){
   //console.log("log")
 }
 
-load_assets();
+async load_assets();
 var speed=0.005;
 var count=0;
 			var animate = function () {
