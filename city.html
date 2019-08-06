@@ -87,7 +87,7 @@
 				}
 			}
 function add(){
-	if(bin=1){
+	if(bin==1){
         var geometry = new THREE.BoxGeometry( 0.1, 0.1, 0.1 );
         var material = new THREE.MeshBasicMaterial( {color: 0xffb29a} );
         var cube = new THREE.Mesh( geometry, material );
@@ -98,7 +98,6 @@ function add(){
 	assets.push([cube.position.x,cube.position.y,cube.position.z]);
 	console.log("added");
 	}
-	else{}
       }
 
 async function load_assets(){
