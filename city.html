@@ -90,7 +90,7 @@
 function add(){
 	if(bin==1){
         var geometry = new THREE.BoxGeometry( 0.1, 0.1, 0.1 );
-        var material = new THREE.MeshBasicMaterial( {color: 0xffb29a} );
+        var material = new THREE.MeshBasicMaterial( {color: 0xffb29a,wireframe:true} );
         var cube = new THREE.Mesh( geometry, material );
         cube.position.x=camera.position.x;
         cube.position.z=camera.position.z;
@@ -104,7 +104,7 @@ function add(){
 async function load_assets(){
         for (i in x5){
           var geometry = new THREE.BoxGeometry( 0.1, 0.1, 0.1 );
-          var material = new THREE.MeshBasicMaterial( {color: 0xffb29a} );
+          var material = new THREE.MeshBasicMaterial( {color: 0xffb29a,wirefame:true} );
           var cube = new THREE.Mesh( geometry, material );
           cube.position.x=x5[i];
           cube.position.y=y5[i];
@@ -225,7 +225,7 @@ async function load_assets(){
 }
 
 load_assets();
-var speed=0.005;
+var speed=0.1;
 var count=0;
 			var animate = function () {
         count+=1
